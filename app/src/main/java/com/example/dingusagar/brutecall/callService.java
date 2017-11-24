@@ -107,9 +107,6 @@ public class callService extends Service {
     public void callAgain(String number) {
         Toast.makeText(getApplicationContext(), "Calling " + number, Toast.LENGTH_SHORT).show();
         Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setAction(Intent.ACTION_VIEW);
-        callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        callIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         callIntent.setData(Uri.parse("tel:" + number));
         Log.e("LOGGING 123", "calling 1 ");
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
