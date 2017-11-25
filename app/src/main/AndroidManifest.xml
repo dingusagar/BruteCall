@@ -21,8 +21,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".callService" />
-
         <activity android:name=".Main2Activity"></activity>
     </application>
 

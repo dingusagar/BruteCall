@@ -1,85 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/fancyLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fancyLayout"
-    tools:context="com.example.dingusagar.brutecall.MainActivity"
-    android:background="#6bc3f6">
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context="com.example.dingusagar.brutecall.MainActivity">
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_margin="5dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/setNumberText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"
-            android:id="@+id/setNumberText"
-            android:hint="Type Number Here"
+            android:layout_marginTop="75dp"
             android:layout_weight="12"
-            android:layout_marginTop="75dp" />
+            android:ems="10"
+
+            android:hint="Type Number Here"
+            android:inputType="phone" />
 
         <Button
+            android:id="@+id/phoneBookButton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="Phone Book"
-            android:id="@+id/phoneBookButton" />
+            android:text="Phone Book" />
 
 
     </LinearLayout>
 
     <EditText
+        android:id="@+id/setNoOfCalls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-
-        android:ems="10"
-        android:id="@+id/setNoOfCalls"
-        android:hint="How many calls ?"
 
         android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+
+        android:hint="How many calls ?"
+        android:inputType="numberDecimal" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CALL"
         android:id="@+id/buttonCall"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/setNoOfCalls"
-        android:layout_alignStart="@+id/setNoOfCalls" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cancel"
+        android:layout_alignLeft="@+id/setNoOfCalls"
+        android:layout_alignStart="@+id/setNoOfCalls"
+        android:layout_centerVertical="true"
+        android:text="CALL" />
+
+    <Button
         android:id="@+id/bcancel"
-        android:layout_alignTop="@+id/buttonCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/setNoOfCalls"
         android:layout_alignRight="@+id/setNoOfCalls"
-        android:layout_alignEnd="@+id/setNoOfCalls" />
+        android:layout_alignTop="@+id/buttonCall"
+        android:text="cancel" />
 
     <TextView
+        android:id="@+id/xCallsCalled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Called 0 times"
-        android:textSize="40dp"
-        android:id="@+id/xCallsCalled"
-        android:layout_marginTop="71dp"
         android:layout_below="@+id/buttonCall"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:text="Called 0 times"
+        android:textSize="40dp" />
 
 </RelativeLayout>

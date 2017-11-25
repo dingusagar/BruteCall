@@ -24,6 +24,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity{
 
     EditText numberText = null;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity{
     PhoneCallListener phoneListener;
     TelephonyManager telephonyManager;
     BruteCall bruteCall;
+    ContactNumbersListDialog contactNumbersListDialog;
 
     //temp
     Button bcancel;
@@ -96,12 +99,12 @@ public class MainActivity extends AppCompatActivity{
 
         String num = numberText.getText().toString();
         String noOfCalls = noOfCallsText.getText().toString();
-        if(num == "")
+        if(num.equals(""))
         {
             Toast.makeText(getApplicationContext(), "Please enter a phone number", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(noOfCalls == "")
+        if(noOfCalls.equals(""))
         {
             Toast.makeText(getApplicationContext(), "Please enter the number of calls", Toast.LENGTH_SHORT).show();
             return;
@@ -119,6 +122,11 @@ public class MainActivity extends AppCompatActivity{
     {
         infoText.setText(message);
     }
+
+    public void updateUIforNumberFromContactList(String num){
+        numberText.setText(num);
+    }
+
 
 
     @Override
@@ -141,11 +149,17 @@ public class MainActivity extends AppCompatActivity{
                             {
 
                                 Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = "+ id,null, null);
+                                ArrayList<String> numberList = new ArrayList<>();
                                 while (phones.moveToNext()) {
                                     String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                                    Log.e("Number", phoneNumber);
+                                    if(!numberList.contains(phoneNumber))
+                                        numberList.add(phoneNumber);
                                 }
                                 phones.close();
+
+                                contactNumbersListDialog = new ContactNumbersListDialog(this,numberList);
+                                contactNumbersListDialog.setupDialog();
+                                contactNumbersListDialog.showDialog();
                             }
 
                         }
