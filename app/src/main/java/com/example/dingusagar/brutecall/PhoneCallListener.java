@@ -47,8 +47,7 @@ public class PhoneCallListener extends PhoneStateListener {
                 phoneCalled = false;
                 bruteCall.setNumberOfCalls_Called(bruteCall.getNumberOfCalls_Called()+1);
 
-                bruteCall.startTimer(15000);
-                bruteCall.call();
+                bruteCall.callAfter(15);
 
             }
 

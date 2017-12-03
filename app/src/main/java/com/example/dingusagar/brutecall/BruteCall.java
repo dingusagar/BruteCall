@@ -57,7 +57,7 @@ public class BruteCall {
 
 
 
-    public void call() {
+    public void callAfter(final int duration) {
 
         if(numberOfCalls_Called >= totalNoOfCalls  || bruteCallCancelled) {
             numberOfCalls_Called = 0;
@@ -69,12 +69,14 @@ public class BruteCall {
             @Override
             public void run() {
 
+                startTimer(duration);
 
-//                for(int i =1; i<=5 ; i++) {
-//                    Toast.makeText(context, "Calling again in " + i, Toast.LENGTH_SHORT).show();
-//                }
+                if(numberOfCalls_Called >= totalNoOfCalls  || bruteCallCancelled) {
+                    numberOfCalls_Called = 0;
+                    bruteCallCancelled = false;
+                    return;
+                }
 
-//                Toast.makeText(context, "Calling " + phoneNumber, Toast.LENGTH_SHORT).show();
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:" + phoneNumber));
                 Log.e("LOGGING 123", "calling 1 ");
@@ -96,17 +98,25 @@ public class BruteCall {
 
 
 
-    void startTimer(int duration)
+    private void startTimer(final int seconds)
     {
         Log.e("LOGTAG","timer started ");
 
-        synchronized (this) {
-            try {
-                wait(duration);
-            } catch (InterruptedException e) {
-                Log.e("LOGTAG", "waiting error");
+        ((MainActivity)context).runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ((MainActivity)context).updateUIforSecondaryInfo("Next call in "+seconds +"seconds. \n You many cancel anytime");
+
             }
+        });
+
+        try {
+            Thread.sleep(seconds*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
+
     }
 
     boolean checkCallingPermission()

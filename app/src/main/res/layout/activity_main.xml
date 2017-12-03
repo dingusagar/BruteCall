@@ -28,17 +28,11 @@
             android:layout_marginTop="75dp"
             android:layout_weight="12"
             android:ems="10"
-
+            android:textSize="25sp"
             android:hint="Type Number Here"
             android:inputType="phone" />
 
-        <Button
-            android:id="@+id/phoneBookButton"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="Phone Book" />
+
 
 
     </LinearLayout>
@@ -47,40 +41,67 @@
         android:id="@+id/setNoOfCalls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:ems="10"
-
+        android:textSize="25sp"
         android:hint="How many calls ?"
         android:inputType="numberDecimal" />
 
-    <Button
-        android:id="@+id/buttonCall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/setNoOfCalls"
-        android:layout_alignStart="@+id/setNoOfCalls"
-        android:layout_centerVertical="true"
-        android:text="CALL" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/bcancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/setNoOfCalls"
-        android:layout_alignRight="@+id/setNoOfCalls"
-        android:layout_alignTop="@+id/buttonCall"
-        android:text="cancel" />
+        <Button
+            android:id="@+id/buttonCall"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="CALL" />
+
+        <Button
+            android:id="@+id/bcancel"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANCEL" />
+
+        <Button
+            android:id="@+id/phoneBookButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="PHONE BOOK" />
+
+    </LinearLayout>
+
+
+
+
 
     <TextView
         android:id="@+id/xCallsCalled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonCall"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="126dp"
         android:text="Called 0 times"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:layout_below="@+id/setNoOfCalls"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/secondaryInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="86dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="14dp"
+        android:text=""
+        android:layout_below="@+id/xCallsCalled"
+        android:layout_alignLeft="@+id/xCallsCalled"
+        android:layout_alignStart="@+id/xCallsCalled" />
 
 </RelativeLayout>

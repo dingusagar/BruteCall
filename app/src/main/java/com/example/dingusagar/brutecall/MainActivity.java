@@ -18,13 +18,19 @@ import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dingusagar.brutecall.Settings.SettingsActivity;
+
 import java.util.ArrayList;
+
+import static android.R.attr.id;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity{
 
     //temp
     Button bcancel;
-    private TextView infoText;
+    private TextView infoText,secondaryInfoText;
 
 
     @Override
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity{
         callButton = (Button)findViewById(R.id.buttonCall);
         phoneBookButton = (Button)findViewById(R.id.phoneBookButton);
         infoText = (TextView)findViewById(R.id.xCallsCalled);
+        secondaryInfoText = (TextView) findViewById(R.id.secondaryInfo);
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +78,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                bruteCall.setBruteCallCancelled(true);
+               secondaryInfoText.setText("Cancelled Remaining Calls !!");
                 Log.e("DINGU", "cancel call clicked");
 
             }
@@ -97,6 +105,7 @@ public class MainActivity extends AppCompatActivity{
 
     private void onCallButtonClicked() {
 
+        secondaryInfoText.setText("");
         String num = numberText.getText().toString();
         String noOfCalls = noOfCallsText.getText().toString();
         if(num.equals(""))
@@ -113,7 +122,7 @@ public class MainActivity extends AppCompatActivity{
 
         bruteCall.setPhoneNumber(num);
         bruteCall.setTotalNoOfCalls(Integer.parseInt(noOfCalls));
-        bruteCall.call();
+        bruteCall.callAfter(0);
     }
 
 
@@ -127,7 +136,27 @@ public class MainActivity extends AppCompatActivity{
         numberText.setText(num);
     }
 
+    public void updateUIforSecondaryInfo(String message){
+        secondaryInfoText.setText(message);
+    }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

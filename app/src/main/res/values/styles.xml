@@ -1,17 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:editTextStyle">@style/App_EditTextStyle</item>
     </style>
 
     <style name="CustomTextView" parent="@android:style/TextAppearance.Widget.TextView">
         <item name="android:textColor">#fffdfc</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">93sp</item>
+    </style>
+
+    <style name="App_EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">#fffbfb</item>
+        <item name="android:layout_height">45dip</item>
     </style>
 
 </resources>
