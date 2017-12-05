@@ -15,4 +15,4 @@ Select the contact number from your contacts or type the number . give the numbe
 
 <h5>Techinical </h5>
 Android does not let you know whether the outgoing call was taken by the correspondant or whether it was rejected or rang out.
-There fore the app analysis the duration of ringing time from many users to make this decision.
+Therefore the app analysis the duration of ringing time from many users to make this decision.
