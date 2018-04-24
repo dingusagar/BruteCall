@@ -7,7 +7,7 @@ But they dont pick up <br>
 So you want to call them again and again till they pick up <br>
 <h4> thats the app - Brute Call </h4>
 </B>
-![screenshot](https://github.com/dingusagar/BruteCall/blob/master/Screenshot_20180424-164049.jpg)
+![alt text](https://github.com/dingusagar/BruteCall/blob/master/Screenshot_20180424-164049.jpg)
 
 <br><br>
 Select the contact number from your contacts or type the number . give the number of times you want to call . Click Call . Done
