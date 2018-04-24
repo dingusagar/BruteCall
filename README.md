@@ -13,6 +13,6 @@ Select the contact number from your contacts or type the number . give the numbe
 <br><br>
 
 
-<h5>Techinical </h5>
+<h5>Note </h5>
 Android does not let you know whether the outgoing call was taken by the correspondant or whether it was rejected or rang out.
-Therefore the app analysis the duration of ringing time from many users to make this decision.
+Therefore the app analysis the duration of ringing time to make this decision.
