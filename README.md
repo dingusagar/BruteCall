@@ -9,7 +9,7 @@ You try again and again, but still no response. <be>
 But maybe it's an emergency. You really want them to pickup the phone. <br>
 Basically you want to call them again and again till they pick up <br>
 <h4> So that's the app - Brute Call </h4> It automates calling a person several times till they pickup. 
-</B>
+</B> </B> </B>
 Disclaimer: This app should be used responsibly and only for emergencies. The intention of the application is not to annoy people by ringing their phones continuously. 
 
 ![alt text](https://raw.githubusercontent.com/dingusagar/BruteCall/master/new.jpeg) 
