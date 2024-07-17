@@ -1,7 +1,8 @@
 # BruteCall
 
-So what is this app all about. 
 <B>
+So what is this app all about?
+
 You try to call someone <br>
 But they dont pick up <br>
 So you want to call them again and again till they pick up <br>
