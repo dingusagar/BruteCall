@@ -5,8 +5,10 @@ So what is this app all about?
 
 You try to call someone <br>
 But they dont pick up <br>
-So you want to call them again and again till they pick up <br>
-<h4> thats the app - Brute Call </h4>
+You try again and again, but still no response. <be>
+But maybe it's an emergency. You really want them to pickup the phone. <br>
+Basically you want to call them again and again till they pick up <br>
+<h4> And that's the app - Brute Call </h4>
 </B>
 Disclaimer: This app should be used responsibly and only for emergencies. The intention of the application is not to annoy people by ringing their phones continuously. 
 
