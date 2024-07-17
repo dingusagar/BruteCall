@@ -11,6 +11,7 @@ Basically you want to call them again and again till they pick up <br>
 <h4> So that's the app - Brute Call: an app to automate calling a person several times till they pick up your call.   <br>  <br>   <br>
 Disclaimer: This app should be used responsibly and only for emergencies. The intention of the application is not to annoy people by ringing their phones continuously. 
 
+<br>  <br>   <br>
 ![alt text](https://raw.githubusercontent.com/dingusagar/BruteCall/master/new.jpeg) 
 
 
